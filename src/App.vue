@@ -1,23 +1,31 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div class="app">
+    <routerView/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import Footer from './components/Footer/Footer'
+  export default {
+    components:{
+      Footer
+    },
+    mounted(){
+      (function () {
+        var width = document.documentElement.clientWidth
+        var style = document.createElement('style')
+        style.innerHTML = 'html{font-size:'+width/10+'px !important}'
+        document.head.appendChild(style)
+        console.log(style)
+      })();
+    }
+  }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+  @import "../static/css/reset.css"
+  .app
+    width: 100%
+    height: 100%
 </style>
