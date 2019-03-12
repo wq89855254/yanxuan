@@ -35,3 +35,16 @@
                              但是有一个问题，在loop后滑动至最后一张不好滑动
   - 文本第二行显示省略号
   
+  - 从计算属性拿到的数据要做预处理
+
+  - BScroll防误触的坑
+    - 手动添加click:true配置
+  - [vuex] unknown action type: getTabs
+    - 出现在vuex的某个module中，原因一般是没有暴露出去
+  - 配置代理后要重启
+
+## day03
+  - 识物页面
+  - params的使用
+    - 一堆数据中找与param参数对应的数据
+    - 将this.$route.params.id 与包裹器div的v-if对应起来

@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <routerView/>
-    <Footer/>
+    <Footer v-if="!$route.meta.hide"/>
   </div>
 </template>
 
@@ -25,7 +25,11 @@
 
 <style lang="stylus">
   @import "../static/css/reset.css"
-  .app
+  html,body
     width: 100%
     height: 100%
+    overflow: hidden;
+    .app
+      width: 100%
+      height: 100%
 </style>

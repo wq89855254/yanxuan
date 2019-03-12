@@ -11,6 +11,6 @@ export default function ajax (url,data={},method='GET') {
       .then((response)=>{
         resolve(response.data)
       })
-      .catch(err=>console('请求失败',err))
+      .catch(err=>{console.log('请求失败',err)})
   })
 }

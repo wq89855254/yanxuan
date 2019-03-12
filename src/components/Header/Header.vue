@@ -1,12 +1,12 @@
 <template>
   <div class="header">
     <div class="main">
-      <span class="title"></span>
-      <div class="head_search">
+      <slot name="title"></slot>
+      <div class="head_search" :class="{cat:$route.path.includes('/category')}" @click="toSearch">
         <span></span>
         <span>搜索商品，共19966款好物</span>
       </div>
-      <div class="login">登录</div>
+      <slot name="login"></slot>
     </div>
 
     <slot name="bottom"></slot>
@@ -15,7 +15,11 @@
 
 <script>
   export default {
-    name: 'Header'
+    methods:{
+      toSearch(){
+        this.$router.push('/search')
+      }
+    }
   }
 </script>
 
@@ -33,6 +37,8 @@
       display: flex
       padding: 0.21333rem 0.4rem;
       align-items: center;
+      display flex
+      justify-content: space-around
       .title
         width: 1.84rem;
         height: 0.53333rem;
@@ -52,6 +58,8 @@
         text-align: center;
         display: flex;
         align-items: center;
+        &.cat
+          width: 90%
       .login
         width: 0.98667rem;
         height: 0.53333rem;

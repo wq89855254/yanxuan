@@ -1,23 +1,23 @@
 <template>
   <div class="footer">
     <ul class="foot_wrap">
-      <li @click="toPages('msite')" :class="this.$route.path.indexOf('/msite/')?'active':'a'">
+      <li @click="toPages('msite')" :class="{active:$route.path.includes('msite')}">
         <span class="iconfont icon-552cd5641bbec"></span>
         <span>首页</span>
       </li>
-      <li @click="toPages('category')" :class="{active:this.$route.path==='/category'}">
+      <li @click="toPages('category')" :class="{active:$route.path.includes('category')}">
         <span class="iconfont icon-classifi"></span>
         <span>分类</span>
       </li>
-      <li @click="toPages('identify')" :class="{active:this.$route.path==='/identify'}">
+      <li @click="toPages('identify')" :class="{active:$route.path.includes('identify')}">
         <span class="iconfont icon-tupian"></span>
         <span>识物</span>
       </li>
-      <li @click="toPages('shopCart')" :class="{active:this.$route.path==='/shopCart'}">
+      <li @click="toPages('shopCart')" :class="{active:$route.path==='/shopCart'}">
         <span class="iconfont icon-caigou-xianxing"></span>
         <span>购物车</span>
       </li>
-      <li @click="toPages('personal')" :class="{active:this.$route.path==='/personal'}">
+      <li @click="toPages('personal')" :class="{active:$route.path==='/personal'}">
         <span class="iconfont icon-jingjirenjinglikehuxianxingcopy"></span>
         <span>个人</span>
       </li>

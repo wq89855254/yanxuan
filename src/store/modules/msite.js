@@ -9,7 +9,7 @@ const getters = {
 }
 const actions = {
   async getHomeInfo({commit}){
-    const result = await reqHome('/home')
+    const result = await reqHome()
     if(result.code===0){
       commit(GETHOMEINFO,result.data)
     }

@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header>
+      <div class="title" slot="title"></div>
       <!--头部导航-->
       <nav class="head_nav " slot="bottom">
         <div class="wrapper">
@@ -22,6 +23,8 @@
           <span class="iconfont icon-arrow"></span>
         </div>
       </nav>
+      <!--登录-->
+      <div class="login" slot="login">登录</div>
     </Header>
     <routerView/>
   </div>
@@ -34,7 +37,6 @@
     mounted () {
       const scroll = new BScroll('.wrapper',{
         scrollX:true,
-        scrollY:false
       })
     }
   }
