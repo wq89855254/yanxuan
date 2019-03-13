@@ -40,13 +40,13 @@ export default [
   {
     path:'/category',
     component:Category,
+    redirect:'/category/cateList/1022001',
     children:[
       {
         path:'/category/cateList/:id',
         component:Catelist,
       }
     ],
-    redirect:'/category/cateList/1031001',
 
   },
   {

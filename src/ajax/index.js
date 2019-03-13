@@ -1,5 +1,6 @@
 import ajax from './ajax'
 const api = '/api'
+// http://m.you.163.com/topic/v1/find/recAuto.json
 export const reqHome = () => ajax('/home')
 export const reqCate = () => ajax('/cate')
 // 请求识物组件内Tab懒数据

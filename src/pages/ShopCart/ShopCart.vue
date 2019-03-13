@@ -13,7 +13,7 @@
      <div class="centerContain">
        <div class="cartImg"></div>
        <div class="cartText">去添加点什么吧</div>
-       <div class="login">登录</div>
+       <div class="login" @click="$router.push('/personal/phone')">登录</div>
      </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
 
 <script>
   export default {
-    name: 'ShopCart'
+
   }
 </script>
 

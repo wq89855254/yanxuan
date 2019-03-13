@@ -5,8 +5,8 @@
       <div class="wrapper nav_wrapper">
         <ul class="cateNav">
           <li v-for="(cateNavItem,index) in cateInfo.categoryL1List" :key="index">
-            <router-link :to="`/category/cateList/${cateNavItem.id}`">
-              <span class="navTitle">{{cateNavItem.name}}</span>
+            <router-link :class="{active:cateNavItem.id==$route.params.id}" :to="`/category/cateList/${cateNavItem.id}`">
+              <span  class="navTitle">{{cateNavItem.name}}</span>
             </router-link>
           </li>
         </ul>
@@ -65,6 +65,8 @@
             text-align center
             margin 40px 0
             font-size 28px
+            &.active
+              color darkorange
       .cateList
         width: 528px
         padding: 0.4rem 0.4rem 0.28rem;

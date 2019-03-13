@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div ref="wrap" class="BSwrapper">
     <div class="contain">
       <div class="list_wrapper" >
         <div class="img_wrap">
@@ -27,14 +27,17 @@
       }
     },
     mounted(){
-      if(this.cateInfo.categoryL1List){
-        var result = this.cateInfo.categoryL1List.find(item => item.id === this.$route.params.id * 1)
-        if (!result) {
-          this.detail = this.cateInfo.categoryL1List[0]
-        } else {
-          this.detail = result
+     /* this.$nextTick(()=>{
+      //不生效
+        if(this.cateInfo){
+          var result = this.cateInfo.categoryL1List.find(item => item.id === this.$route.params.id * 1)
+          if (!result) {
+            this.detail = this.cateInfo.categoryL1List[1]
+          } else {
+            this.detail = result
+          }
         }
-      }
+      })*/
     },
     computed:{
       ...mapState({
@@ -54,8 +57,15 @@
     watch:{
       cateInfo(){
         this.$nextTick(()=>{
-          console.log(123)
-          new BScroll('.wrapper',{
+          var result = this.cateInfo.categoryL1List.find(item => item.id === this.$route.params.id * 1)
+          if (!result) {
+            this.detail = this.cateInfo.categoryL1List[0]
+          } else {
+            this.detail = result
+          }
+
+          console.log(this)
+          this.bs = new BScroll(this.$refs.wrap,{
             scrollY:true
 
           })
@@ -75,9 +85,8 @@
 </script>
 
 <style lang="stylus" scoped>
-  .wrapper
-    height: 1000px
-    border: 1px solid #000
+  .BSwrapper
+    height: 1100px
     overflow: hidden;
     .contain
       width: 528px

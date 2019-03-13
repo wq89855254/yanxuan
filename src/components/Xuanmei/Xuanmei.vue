@@ -6,7 +6,7 @@
     </div>
     <p class="text">{{topic.title}}</p>
     <div class="imgWrap">
-      <img :src="topic.picUrl" alt="">
+      <img v-lazy="topic.picUrl" alt="">
     </div>
   </div>
 </template>

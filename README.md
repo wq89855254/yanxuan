@@ -48,3 +48,7 @@
   - params的使用
     - 一堆数据中找与param参数对应的数据
     - 将this.$route.params.id 与包裹器div的v-if对应起来
+    
+## day04
+  - 关于bscroll死活不生效的问题（嵌套子路由）
+    - bscroll自动查找第一个类名

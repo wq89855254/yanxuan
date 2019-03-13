@@ -11,7 +11,7 @@
     </div>
 
     <div class="imgWrap">
-      <img :src="topic.picUrl" alt="">
+      <img v-lazy="topic.picUrl" alt="">
     </div>
   </div>
 </template>

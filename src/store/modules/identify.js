@@ -1,9 +1,11 @@
-import {reqTabs,reqRecommendData} from '../../ajax'
-import {GETTABS,GETRECOMMENDDATA} from '../mutation-types'
+import {reqTabs,reqRecommendData,reqAutoRecommendData} from '../../ajax'
+import {GETTABS,GETRECOMMENDDATA,GETAUTORECOMMENDDATA} from '../mutation-types'
+
 
 const state = {
   tabs:{},
-  recommendData:{}
+  recommendData:{},
+  pullUpData:[]
 }
 const getters = {}
 
@@ -21,9 +23,16 @@ const actions = {
 
     }
 
-  }
+  },
 
+  async getAutoData({commit},{page, size}){
+    const result = await reqAutoRecommendData(page,size)
+    if(result.code==200){
+      commit(GETAUTORECOMMENDDATA,result.data)
+    }
+  }
 }
+
 
 const mutations = {
 
@@ -32,9 +41,10 @@ const mutations = {
   },
   [GETRECOMMENDDATA](state,data){
     state.recommendData = data
-    console.log(state.recommendData)
   },
-
+  [GETAUTORECOMMENDDATA](state,pullUpData){
+    state.pullUpData.push(...pullUpData.result)
+  }
 }
 export default {
   state,

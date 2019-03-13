@@ -9,6 +9,7 @@
               <img :src="list.picUrl" alt="">
             </div>
           </div>
+          <!--自定义分页器-->
           <div class="swiper-pagination home-pagination"></div>
 
         </div>
@@ -859,20 +860,20 @@
 </style>
 <style>
 .swiper-pagination-customs {
-width: .53333rem;
-height: .05333rem;
-display: inline-block;
-background: #fff;
-opacity: .4;
-border-radius: 0;
-margin: 0 .13333rem 0 0;
+  width: 40px;
+  height: 4px;
+  display: inline-block;
+  background: #fff;
+  opacity: .4;
+  border-radius: 0;
+  margin: 80px 15px 0 0;
 }
 
 /*自定义分页器激活时的样式表现*/
 .swiper-pagination-customs-active {
-opacity: 1;
-background: #fff;
-border-radius: 0;
+  opacity: 1;
+  background: #fff;
+  border-radius: 0;
 }
 
 </style>
